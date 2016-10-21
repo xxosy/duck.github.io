@@ -1,5 +1,5 @@
 /*
-	Telephasic by HTML5 UP
+	Prologue by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -7,11 +7,11 @@
 (function($) {
 
 	skel.breakpoints({
-		normal: '(max-width: 1280px)',
-		narrow: '(max-width: 1080px)',
-		narrower: '(max-width: 820px)',
-		mobile: '(max-width: 736px)',
-		mobilep: '(max-width: 480px)'
+		wide: '(min-width: 961px) and (max-width: 1880px)',
+		normal: '(min-width: 961px) and (max-width: 1620px)',
+		narrow: '(min-width: 961px) and (max-width: 1320px)',
+		narrower: '(max-width: 960px)',
+		mobile: '(max-width: 736px)'
 	});
 
 	$(function() {
@@ -26,62 +26,92 @@
 				$body.removeClass('is-loading');
 			});
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
-
-		// Prioritize "important" elements on narrower.
-			skel.on('+narrower -narrower', function() {
-				$.prioritize(
-					'.important\\28 narrower\\29',
-					skel.breakpoint('narrower').active
-				);
-			});
-
 		// CSS polyfills (IE<9).
 			if (skel.vars.IEVersion < 9)
 				$(':last-child').addClass('last-child');
 
-		// Dropdowns.
-			$('#nav > ul').dropotron({
-				mode: 'fade',
-				speed: 300,
-				alignment: 'center',
-				noOpenerFade: true
+		// Fix: Placeholder polyfill.
+			$('form').placeholder();
+
+		// Prioritize "important" elements on mobile.
+			skel.on('+mobile -mobile', function() {
+				$.prioritize(
+					'.important\\28 mobile\\29',
+					skel.breakpoint('mobile').active
+				);
 			});
 
-		// Off-Canvas Navigation.
+		// Scrolly links.
+			$('.scrolly').scrolly();
 
-			// Navigation Button.
+		// Nav.
+			var $nav_a = $('#nav a');
+
+			// Scrolly-fy links.
+				$nav_a
+					.scrolly()
+					.on('click', function(e) {
+
+						var t = $(this),
+							href = t.attr('href');
+
+						if (href[0] != '#')
+							return;
+
+						e.preventDefault();
+
+						// Clear active and lock scrollzer until scrolling has stopped
+							$nav_a
+								.removeClass('active')
+								.addClass('scrollzer-locked');
+
+						// Set this link to active
+							t.addClass('active');
+
+					});
+
+			// Initialize scrollzer.
+				var ids = [];
+
+				$nav_a.each(function() {
+
+					var href = $(this).attr('href');
+
+					if (href[0] != '#')
+						return;
+
+					ids.push(href.substring(1));
+
+				});
+
+				$.scrollzer(ids, { pad: 200, lastHack: true });
+
+		// Header (narrower + mobile).
+
+			// Toggle.
 				$(
-					'<div id="navButton">' +
-						'<a href="#navPanel" class="toggle"></a>' +
+					'<div id="headerToggle">' +
+						'<a href="#header" class="toggle"></a>' +
 					'</div>'
 				)
 					.appendTo($body);
 
-			// Navigation Panel.
-				$(
-					'<div id="navPanel">' +
-						'<nav>' +
-							'<a href="index.html" class="link depth-0">Home</a>' +
-							$('#nav').navList() +
-						'</nav>' +
-					'</div>'
-				)
-					.appendTo($body)
+			// Header.
+				$('#header')
 					.panel({
 						delay: 500,
 						hideOnClick: true,
+						hideOnSwipe: true,
 						resetScroll: true,
 						resetForms: true,
-						side: 'top',
+						side: 'left',
 						target: $body,
-						visibleClass: 'navPanel-visible'
+						visibleClass: 'header-visible'
 					});
 
-			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
+			// Fix: Remove transitions on WP<10 (poor/buggy performance).
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#navButton, #navPanel, #page-wrapper')
+					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
 
 	});
