@@ -5,16 +5,46 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+	<link rel="stylesheet" href="assets/css/index.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
-<body style="background-image:url('assets/img/img_background.png');">
+<body>
 	<div>
-		
+		<div style="text-align:right">
+			<div class="title">
+				<div class="season">
+					<span id = "num_of_season">1st</span><span> Season</span>
+				</div>
+				<div>
+					<span>Premier League</span>
+				</div>
+			</div>
+			<div class="title">
+				<span>RANKING</span>
+			</div>
+		</div>
+		<div class = "container">
+			<div class = "contents">
+				<div class ="rounds" id = "rounds">
+
+				</div>
+				<div id = players>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
-
+	<script src="assets/js/index.js"></script>
+	<script src="assets/data/season.js"></script>
+	<script src="assets/data/player.js"></script>
+	<script>
+		$(document).ready(function() {
+			createSeason();
+			drawResult();
+        });
+	</script>
 </body>
 </html>

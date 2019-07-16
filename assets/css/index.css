@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+@font-face{
+	font-family:'typo';
+	src:url('../fonts/Typo_SsangmunDongB.ttf') format('truetype');
+}
+body{
+	background-image:url('../img/img_background_fhd.png');
+	
+	margin:0px;
+	color:white;
+}
+.title{
+	font-family: typo;
+	display:inline-block;
+	vertical-align:middle;
+}
+.season{
+	height:27px;
+	text-align: right;
+}
+.title>span{
+	font-size: 72px;
+	letter-spacing:-5px;
+	
+}
+.title>*>span{
+	font-size:36px;
+	font-weight:1000;
+	color:white;
+}
+.container{
+	background:#2b1931;
+	opacity: 0.9;
+	height:700px;
+	margin-top:300px;
+}
+
+.rounds{
+	margin:auto;
+	padding-top:100px;
+	width:700px;
+	display: flex;
+}
+.round{
+	background:#ac0049;
+	text-align: center;
+	padding-top:12px;
+	height:32px;
+	flex-basis:100px;
+	flex-grow:1;
+}
+.player{
+	margin:auto;
+	margin-top:2px;
+	width:700px;
+	display: flex;
+}
+.player>.info{
+	background:#ac0049;
+	text-align: center;
+	padding-top:12px;
+	flex-basis:100px;
+	height:32px;
+	flex-grow:1;
+}
+.rounds>.small,
+.player>.small{
+	flex-basis:47px !important;
+	color:#00B0F0 !important;
+	font-weight: 900;
+	background:transparent !important;
+}
+.player>.small{
+	background:white !important;
+}
