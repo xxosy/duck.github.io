@@ -46,7 +46,14 @@ function drawResult(num_of_season){
     for(let i = 0;i<season[num_of_season].num_of_player;i++){
         contents+="<div class =\"player\" id = \"player\">";
         if(i==0){
-            contents+="<div style=\"padding-top:2px;height:42px\" class =\"info small\"><img style =\"width:38.8px\" src=\"assets/img/img_champion.png\"></div>";    
+            if(num_of_season==0){
+                contents+="<div style=\"padding-top:2px;height:42px\" class =\"info small\"><img style =\"width:38.8px\" src=\"assets/img/img_champion.png\"></div>";
+            }
+            else if(num_of_season==1){
+                contents+="<div style=\"padding-top:2px;height:42px\" class =\"info small\"><img style =\"width:38.8px\" src=\"assets/img/img_champion_bronze.png\"></div>";
+            }else{
+                
+            }
         }else{
             contents +="<div class =\"info small\">"+(i+1)+"</div>";
         }
