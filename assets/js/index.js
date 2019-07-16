@@ -20,10 +20,10 @@ function drawResult(){
     var contents = "";
     contents+="<div class =\"round small\"></div>"+"<div class =\"round\">라운드</div>";
     for(let i = 0;i<season.round;i++){
-        contents+="<div class =\"round\">"+(i+1)+"라운드</div>";
+        contents+="<div class =\"round\">"+(i+1)+"</div>";
     }
-    contents+="<div class =\"round\">평균순위</div>"+
-    "<div class =\"round\">획득 포인트</div>";
+    contents+="<div class =\"round\">평균</div>"+
+    "<div class =\"round\">포인트</div>";
     $('#rounds').html(contents);
 
     contents ="";

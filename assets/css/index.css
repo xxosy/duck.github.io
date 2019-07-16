@@ -5,7 +5,8 @@
 }
 body{
 	background-image:url('../img/img_background_fhd.png');
-	
+	background-position: center center;
+	background-repeat: no-repeat;
 	margin:0px;
 	color:white;
 }
@@ -31,7 +32,7 @@ body{
 .container{
 	background:#2b1931;
 	opacity: 0.9;
-	height:700px;
+	height:500px;
 	margin-top:300px;
 }
 
@@ -72,4 +73,13 @@ body{
 }
 .player>.small{
 	background:white !important;
+}
+
+@media screen and (max-width: 820px){
+	.player{
+		width:430px;
+	}
+	.rounds{
+		width:430px;
+	}
 }
