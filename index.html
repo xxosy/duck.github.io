@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title></title>
+	<title>TFT Premier League</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div>
-		<div style="text-align:right">
+		<div style="text-align:right;margin-right:16px;">
 			<div class="title">
 				<div class="season">
 					<span id = "num_of_season">1st</span><span> Season</span>
@@ -56,10 +56,10 @@
 					</div>
 					<div class="score">
 						<div class = "small"></div>
-						<div>+2</div>
 						<div>0</div>
 						<div>-2</div>
 						<div>-4</div>
+						<div>-6</div>
 					</div>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 	<script>
 		$(document).ready(function() {
 			createSeason();
-			drawResult();
+			drawResult(1);
         });
 	</script>
 </body>

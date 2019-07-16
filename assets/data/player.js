@@ -2,7 +2,7 @@ class Player{
 	constructor(name, results){
 		this.name = name;
 		this.results = results;
-		this.points =[10,8,6,4,2,0,-2,-4];
+		this.points =[10,8,6,4,0,-2,-4,-6];
 	}
 
 	get avgRank(){
