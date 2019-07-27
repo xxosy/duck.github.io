@@ -26,4 +26,8 @@ class Player{
 		}
 		return sum;
 	}
+
+	get numOfWin(){
+		
+	}
 }
