@@ -41,7 +41,23 @@ function createSeason(){
     var temp_season3 = new Season("3th",results[0].length,players,players.length);
 
     season = [temp_season1,temp_season2,temp_season3];
-    console.log(season[2]);
+
+
+    var results = [[5,1,3,1],
+                   [1,8,1,2],
+                   [3,4,5,4],
+                   [2,6,4,5],
+                   [8,7,6,7]];
+    player1 = new Player('현계윤',results[0]);
+    player2 = new Player('박덕수',results[1]);
+    player3 = new Player('유철환',results[2]);
+    player4 = new Player('박청원',results[3]);
+    player5 = new Player('강주원',results[4]);
+
+    players = [player1,player2,player3,player4,player5];
+    var temp_season4 = new Season("4th",results[0].length,players,players.length);
+
+    season = [temp_season1,temp_season2,temp_season3,temp_season4];
 }
 
 function drawResult(num_of_season){
@@ -63,8 +79,8 @@ function drawResult(num_of_season){
             }
             else if(num_of_season==1){
                 contents+="<div style=\"padding-top:2px;height:42px\" class =\"info small\"><img style =\"width:38.8px\" src=\"assets/img/img_champion_bronze.png\"></div>";
-            }else{
-                
+            }else if(num_of_season==3){
+                contents+="<div style=\"padding-top:2px;height:42px\" class =\"info small\"><img style =\"width:38.8px\" src=\"assets/img/img_champion_silver.png\"></div>";
             }
         }else{
             contents +="<div class =\"info small\">"+(i+1)+"</div>";
