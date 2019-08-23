@@ -62,8 +62,8 @@ function createSeason(){
     var results = [[1,3,2,4,2,2],
                    [4,1,1,3,5,8],
                    [5,2,4,2,6,5],
-                   [2,8,3,7,7,4],
                    [7,5,5,1,5,3],
+                   [2,8,3,7,7,4],
                    [8,6,6,7,3,6]];
     player1 = new Player('박덕수',results[0]);
     player2 = new Player('유철환',results[1]);
