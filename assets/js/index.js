@@ -58,6 +58,24 @@ function createSeason(){
     var temp_season4 = new Season("4th",results[0].length,players,players.length);
 
     season = [temp_season1,temp_season2,temp_season3,temp_season4];
+
+    var results = [[1,3,2,4,2,2],
+                   [4,1,1,3,5,8],
+                   [5,2,4,2,6,5],
+                   [2,8,3,7,7,4],
+                   [7,5,5,1,5,3],
+                   [8,6,6,7,3,6]];
+    player1 = new Player('박덕수',results[0]);
+    player2 = new Player('유철환',results[1]);
+    player3 = new Player('박청원',results[2]);
+    player4 = new Player('현계윤',results[3]);
+    player5 = new Player('김태호',results[4]);
+    player6 = new Player('강주원',results[5]);
+
+    players = [player1,player2,player3,player4,player5,player6];
+    var temp_season5 = new Season("5th",results[0].length,players,players.length);
+
+    season = [temp_season1,temp_season2,temp_season3,temp_season4,temp_season5];
 }
 
 function drawResult(num_of_season){
@@ -74,7 +92,7 @@ function drawResult(num_of_season){
     for(let i = 0;i<season[num_of_season].num_of_player;i++){
         contents+="<div class =\"player\" id = \"player\">";
         if(i==0){
-            if(num_of_season==0 || num_of_season==2){
+            if(num_of_season==0 || num_of_season==2 || num_of_season==4){
                 contents+="<div style=\"padding-top:2px;height:42px\" class =\"info small\"><img style =\"width:38.8px\" src=\"assets/img/img_champion.png\"></div>";
             }
             else if(num_of_season==1){

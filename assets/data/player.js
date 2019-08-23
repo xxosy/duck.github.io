@@ -15,6 +15,7 @@ class Player{
 				count++;
 		}
 		var result = sum/(this.results.length-count);
+		result = result.toFixed(1);
 		return result;
 	}
 
